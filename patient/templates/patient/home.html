@@ -1,0 +1,145 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    #row2 h1{
+      text-align: center;
+      padding-top: 100px;
+      height: 350px;
+      background-color: black;
+    }
+    #row3 h2{
+      text-align: center;
+      
+    }
+    #row5 h2{
+       text-align: center;
+       background-color: aqua;
+    }
+    #row5 input{
+      width: 250px;
+      border: 1px solid black;
+      margin-left: 500px;
+
+    }
+    #row5 label{
+      margin-left: 500px;
+      
+    }
+    #row5 button{
+      margin-left: 600px;
+    }
+  </style>
+</head>
+<body>
+    <div class="container-fluid">
+
+      <div class="row">
+        <div class="col-12">
+          <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<div class="container-fluid">  
+    <a class="navbar-brand" href="#">Hospital management</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'patient:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Contact us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'patient:login'  %}">Login</a>
+        </li>
+        
+        
+      </ul>
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+        </div>
+      </div>
+{% block content %}
+{% endblock %}
+      <div class="row" id="row2">
+        <div class="col-12">
+          <h1>AZPEN HOSPITAL</h1>
+        </div>
+      </div>
+      <div class="row" id="row3">
+        <h2>About Us</h2>
+        <p>A hospital is a healthcare institution providing patient treatment with specialized health science and auxiliary healthcare staff and medical equipment.[1] The best-known type of hospital is the general hospital, which typically has an emergency department to treat urgent health problems ranging from fire and accident victims to a sudden illness. A district hospital typically is the major health care facility in its region, with many beds for intensive care and additional beds for patients who need long-term care.
+
+          Specialized hospitals include trauma centers, rehabilitation hospitals, children's hospitals, geriatric hospitals, and hospitals for specific medical needs, such as psychiatric hospitals for psychiatric treatment and other disease-specific categories. Specialized hospitals can help reduce health care costs compared to general hospitals.[2] Hospitals are classified as general, specialty, or government depending on the sources of income received.Hospitals are currently staffed by professional physicians, surgeons, nurses, and allied health practitioners. In the past, however, this work was usually performed by the members of founding religious orders or by volunteers. However, there are various Catholic religious orders, such as the Alexians and the Bon Secours Sisters that still focus on hospital ministry in the late 1990s, as well as several other Christian denominations, including the Methodists and Lutherans, which run hospitals.[4] In accordance with the original meaning of the word, hospitals were original "places of hospitality", and this meaning is still preserved in the names of some institutions such as the Royal Hospital Chelsea, established in 2023 as a retirement and nursing home for veteran soldiers.</p>
+
+      </div>
+      <div class="row" id="row4">
+        <div class="col-3"><div class="card" style="width: 18rem;">
+          <img src="{% static 'image/doctor1.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr Sara</h5>
+            <p class="card-text">Iam Dr Sara specializes in everything having to do with those parts of the body. They even perform operations.</p>
+            <a href="#" class="btn btn-primary">Booking</a>
+          </div>
+        </div></div>
+        <div class="col-3"><div class="card" style="width: 18rem;">
+          <img src="{% static 'image/doctor2.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr Anjali</h5>
+            <p class="card-text"> Iam Dr Anjali  who focuses on the health of infants, children, adolescents and young adults.</p>
+            <a href="#" class="btn btn-primary">Booking</a>
+          </div>
+        </div></div>
+        <div class="col-3"><div class="card" style="width: 18rem;">
+          <img src="{% static 'image/doctor3.avif' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr Robert</h5>
+            <p class="card-text">Iam  Dr robert   a physician who specializes in the diagnosis and surgical treatment. </p>
+            <a href="#" class="btn btn-primary">Booking</a>
+          </div>
+        </div></div>
+        <div class="col-3"><div class="card" style="width: 18rem;">
+          <img src="{% static 'image/doctor4.jpg' %}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dr Carlos</h5>
+            <p class="card-text"> Iam Dr Carlos   Orthopedic surgeons diagnose and treat conditions affecting your bones, muscles, and joints. </p>
+            <a href="#" class="btn btn-primary">Booking</a>
+          </div>
+        </div></div>
+      </div>
+      <div class="row" id="row5">
+        <h2>contact us</h2>
+        <div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">Patient Name</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label">Address</label>
+  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder=""><br>
+  <button type="button" class="btn btn-primary">Submit</button>
+</div>
+      </div>
+      </div>
+    </div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
