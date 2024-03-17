@@ -75,14 +75,18 @@ WSGI_APPLICATION = 'Azpen.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
+'''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+'''
+import dj_database_url
+DATABASES = {
+    'default':dj_database_url.parse('postgres://azpendb_user:3a3mibyJSwBxCznPESpykvcb5cZVxFl0@dpg-cnr81oi0si5c73bu7vj0-a.oregon-postgres.render.com/azpendb')
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
