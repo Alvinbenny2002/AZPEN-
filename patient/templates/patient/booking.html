@@ -1,4 +1,113 @@
-{% extends 'patient/home.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #row2{
+        margin-left: 400px;
+        width: 500px;
+        margin-top: 50px;
+      }
+      #row2 button{
+        margin-top: 10px;
+      }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Hospital Management</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{% url 'patient:home' %}">Home</a>
+                      </li>
+                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'patient:login' %}">login</a>
+                      </li>
+                     
+                    
+                    </ul>
+                    <form class="d-flex" role="search">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+
+        </div>
+        <div class="row" id="row2">
+          <form action="" method="post">
+            {% csrf_token %}
+            <h1>Get an appointment</h1>
+
+            <table style="margin-top: 20px;">
+              <tr>
+                <th><label for="formGroupExampleInput" class="form-label">Full Name</label></th>
+              </tr>
+              <tr>
+                <th><input type="text" class="form-control" id="formGroupExampleInput" placeholder="enter your name" name="name"></th>
+              </tr>
+              
+              
+              <tr>
+                <th><label for="">Select doctor</label></th>
+              </tr>
+              <tr>
+                <th><select class="form-select" aria-label="Default select example" name="doctor">
+                  <option selected>Select the doctor</option>
+                  {% for doc in doctors %}
+                  <option value="{{doc.id}}">Dr {{doc.name}} {{doc.specialization}}</option>
+                  
+                  {% endfor %}
+                </select></th>
+              </tr>
+              <tr>
+                <th><label for="birthday">Date:</label></th>
+              </tr>
+              <tr>
+                <th><input type="date" id="birthday" name="date"></th>
+              </tr>
+              <tr>
+                <th><label for="appt">Select a time:</label></th>
+              </tr>
+              <tr>
+                <th><select class="form-control" name="time" id="">
+                  <option value="09:00:00">9:00am</option>
+                  <option value="10:00:00">10:00am</option>
+                  <option value="11:00:00">11:00am</option>
+                  <option value="12:00:00">12:00pm</option>
+                  <option value="13:00:00">1:00pm</option>
+                </select></th>
+              </tr>
+              <tr>
+                <th><label for="exampleFormControlTextarea1" class="form-label">type your message here</label></th>
+              </tr>
+              <tr>
+                <th><textarea class="form-control" placeholder="text" id="exampleFormControlTextarea1" rows="3" name="message"></textarea></th>
+              </tr>
+              <tr>
+                <th> <button type="submit" class="btn btn-primary">Submit</button></th>
+              </tr>
+          </table>
+        </form>
+
+          </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 {% block content %}
-<h1>Booking</h1>
 {% endblock %}
